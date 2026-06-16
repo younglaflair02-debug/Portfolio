@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Young Kim Portfolio</title>
+
+  <!--
+    Adobe Garamond Pro:
+    If you are using Adobe Fonts, paste your Typekit embed script here.
+    Example:
+    <link rel="stylesheet" href="https://use.typekit.net/YOUR-KIT-ID.css">
+  -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #ffffff;
+      color: #6b46a3;
+      font-family: "Adobe Garamond Pro", "Adobe Garamond", Garamond, Georgia, serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100vw;
+      min-height: 100vh;
+      position: relative;
+      padding: 44px 46px;
+    }
+
+    .nav {
+      position: fixed;
+      top: 44px;
+      left: 46px;
+      z-index: 10;
+    }
+
+    .nav-row {
+      position: absolute;
+      left: 0;
+    }
+
+    #aboutRow {
+      top: 0;
+    }
+
+    #workRow {
+      top: 60px;
+    }
+
+    .nav-row-inner {
+      display: grid;
+      grid-template-columns: 132px 24px auto;
+      align-items: flex-start;
+      column-gap: 24px;
+      width: fit-content;
+    }
+
+    .nav-label,
+    .reveal-link {
+      justify-self: start;
+      width: fit-content;
+      display: inline-block;
+      background: #6b46a3;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      padding: 0 2px 2px 2px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .reveal-link {
+      font-style: normal;
+      text-decoration: none;
+    }
+
+    .reveal-menu {
+      display: none;
+      align-items: center;
+      gap: 100px;
+      margin-left: 0;
+    }
+
+    .about-text {
+      display: none;
+      margin-left: 0;
+      width: 370px;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .about-text p {
+      margin-bottom: 30px;
+    }
+
+    .highlight-line {
+      display: table;
+      width: fit-content;
+      background: #6b46a3;
+      padding: 0 2px 2px 2px;
+      margin-bottom: 1px;
+    }
+
+    .nav-row.is-open .reveal-menu {
+      display: flex;
+    }
+
+    .nav-row.is-open .about-text {
+      display: block;
+    }
+
+    .plus-button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #6b46a3;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 0.75;
+      cursor: pointer;
+      transform: translateY(-1px);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .plus-button:hover {
+      opacity: 0.7;
+    }
+
+    .work-grid {
+      position: absolute;
+      top: 165px;
+      right: 100px;
+      width: 42vw;
+      max-width: 805px;
+      min-width: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .work-thumbnail {
+      width: 100%;
+      background: transparent;
+      display: block;
+      overflow: visible;
+    }
+
+    .work-thumbnail.portrait {
+      width: 48%;
+    }
+
+    .work-thumbnail img,
+    .work-thumbnail video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .superbowl-thumbnail {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.superbowl-thumbnail img {
+  width: calc(50% - 9px);
+  height: auto;
+  display: block;
+}
+
+    @media (max-width: 900px) {
+      .page {
+        padding: 28px;
+      }
+
+      .nav {
+        top: 28px;
+        left: 28px;
+      }
+
+      .nav-label {
+        font-size: 23px;
+      }
+
+      .work-grid {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: calc(100vw - 56px);
+        min-width: 0;
+        margin-top: 135px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-row" id="aboutRow">
+        <div class="nav-row-inner">
+          <a class="nav-label" href="#" aria-label="Marcus Kim">Marcus Kim</a>
+          <button class="plus-button" type="button" aria-label="Open Young Kim menu" aria-expanded="false">+</button>
+
+          <div class="reveal-menu" aria-label="Young Kim links">
+            <a class="reveal-link" href="mailto:younglaflair02@gmail.com">Younglaflair02@gmail.com</a>
+            <a class="reveal-link" href="https://www.instagram.com/younglaflair" target="_blank" rel="noopener noreferrer">IG: YoungLaflair</a>
+            <a class="reveal-link" href="https://www.linkedin.com/in/marcus-kim-4908112b1" target="_blank" rel="noopener noreferrer">linkedIn: Marcus Kim</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row" id="workRow">
+        <div class="nav-row-inner">
+          <a class="nav-label" href="#" aria-label="Work">What</a>
+          <button class="plus-button" type="button" aria-label="Open Work menu" aria-expanded="false">+</button>
+
+          <div class="about-text" aria-label="About Young Kim">
+            <p>
+              <span class="highlight-line">Marcus is a creative from South</span>
+              <span class="highlight-line">Korea with a rich multicultural</span>
+              <span class="highlight-line">background.</span>
+            </p>
+
+            <p>
+              <span class="highlight-line">His practice centers on the belief</span>
+              <span class="highlight-line">that visual communication is not</span>
+              <span class="highlight-line">only a functional tool, but a</span>
+              <span class="highlight-line">meaningful medium for</span>
+              <span class="highlight-line">interconnectedness within</span>
+              <span class="highlight-line">relationships between humans—</span>
+              <span class="highlight-line">capable of shaping thoughts and</span>
+              <span class="highlight-line">evoking feelings</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="work-grid" aria-label="Selected work thumbnails">
+      <a class="work-thumbnail" href="consumerinserepeat.html" aria-label="ConsumeRinseRepeat">
+        <video src="Assets/ConsumeRinseRepeat Spreads copy.mp4" autoplay muted loop playsinline></video>
+      </a>
+
+      <a class="work-thumbnail" href="maison-margiela-branding-campaign.html" aria-label="Maison Margiela Branding Campaign">
+        <video src="Assets/Maison Margiela Card Motion copy.mov" autoplay muted loop playsinline></video>
+      </a>
+
+      <a class="work-thumbnail portrait" href="eternal-decay.html" aria-label="Eternal Decay">
+        <video src="Assets/Eternal Decay Experimental Print copy.mp4" autoplay muted loop playsinline></video>
+      </a>
+
+       <a class="work-thumbnail" href="chain-reaction-publication.html" aria-label="Chain Reaction Publication">
+        <video src="Assets/Chain Reaction Book Spreads copy.mp4" autoplay muted loop playsinline></video>
+      </a>
+
+      <a class="work-thumbnail portrait" href="chain-reaction-motion-poster.html" aria-label="Chain Reaction Motion Poster">
+        <video src="Assets/Chain Reaction Motion Poster  copy.MOV" autoplay muted loop playsinline></video>
+      </a>
+
+      <a class="work-thumbnail" href="city-forever.html" aria-label="City Forever">
+      <img src="Assets/CITY-FOREVER copy.gif" alt="City Forever publication mockup">
+      </a>
+
+      <a class="work-thumbnail" href="dont-be-dumb.html" aria-label="Don't Be Dumb">
+        <video src="Assets/Video Light copy.mp4" autoplay muted loop playsinline></video>
+      </a>
+
+      <a class="work-thumbnail superbowl-thumbnail" href="super-bowl-lix-event-posters.html" aria-label="Super Bowl LIX Event Posters">
+  <img src="Assets/Superbowl Poster 1-2 copy.jpg" alt="Super Bowl LIX event poster one">
+  <img src="Assets/Superbowl Poster 2-3 copy 2.jpg" alt="Super Bowl LIX event poster two">
+</a>
+
+      <a class="work-thumbnail portrait" href="ucl-motion-poster.html" aria-label="UCL Motion Poster">
+        <video src="Assets/UCL Man City Motion Poster copy.mp4" autoplay muted loop playsinline></video>
+      </a>
+    </section>
+  </main>
+  <script>
+    const aboutRow = document.querySelector('#aboutRow');
+    const aboutButton = aboutRow.querySelector('.plus-button');
+
+    aboutButton.addEventListener('click', () => {
+      const isOpen = aboutRow.classList.toggle('is-open');
+      aboutButton.setAttribute('aria-expanded', isOpen);
+      aboutButton.textContent = isOpen ? '−' : '+';
+      aboutButton.setAttribute('aria-label', isOpen ? 'Close Young Kim menu' : 'Open Young Kim menu');
+    });
+
+    const workRow = document.querySelector('#workRow');
+    const workButton = workRow.querySelector('.plus-button');
+
+    workButton.addEventListener('click', () => {
+      const isOpen = workRow.classList.toggle('is-open');
+      workButton.setAttribute('aria-expanded', isOpen);
+      workButton.textContent = isOpen ? '−' : '+';
+      workButton.setAttribute('aria-label', isOpen ? 'Close Work menu' : 'Open Work menu');
+    });
+  </script>
+</body>
+</html>
